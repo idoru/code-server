@@ -55,14 +55,14 @@ target "code-server-debian-11" {
     platforms = ["linux/amd64", "linux/arm64"]
 }
 
-target "code-server-ubuntu-focal" {
+target "code-server-ubuntu-jammy" {
     dockerfile = "ci/release-image/Dockerfile"
     tags = concat(
         gen_tags_for_docker_and_ghcr("ubuntu"),
-        gen_tags_for_docker_and_ghcr("focal"),
+        gen_tags_for_docker_and_ghcr("jammy"),
     )
     args = {
-        BASE = "ubuntu:focal"
+        BASE = "ubuntu:jammy"
     }
     platforms = ["linux/amd64", "linux/arm64"]
 }
